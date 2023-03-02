@@ -1,0 +1,19 @@
+public function removeImage(){
+    if(File::exists(public_path('Student/birender-a1-123.jpg'))){
+        $var=File::delete(public_path('Student/birender-a1-123.jpg'));
+        if($var){
+            return response()->json([
+                "data"=>" deleted",
+            ]);
+        }else{
+            return response()->json([
+                "data"=>"not deleted",
+            ]);
+        }
+    }else{
+    return response()->json([
+        "data"=>"not deleted",
+    ]);
+    }
+    
+}
